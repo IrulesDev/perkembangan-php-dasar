@@ -49,3 +49,41 @@ echo "\n";
 $asosiatif['tahun'] = 2010; //akan terganti dengan yang baru di bawahnya
 var_dump($asosiatif);
 
+
+echo "\n";
+//cara menghapus sebuah array 
+//1.
+//menggunakan array_spice
+$cars = ["BMW", "ferrari", "toyota","mistsubisi"];
+array_splice($cars,1,1); //output yang terhapus adalah ferrari urutan ke 1
+var_dump($cars);
+
+echo "\n";
+//2.
+//dengan unset
+$unst = ["BMW" , "Ferrari" , "Toyota" , "mitsubisi"];
+unset($unst[3]);
+var_dump($unst);
+
+
+echo "\n";
+//3.
+//jika array asosiatif
+$aso = [
+    'merk'=>'xiaomi',
+    'seri'=>'redmi',
+    'nomer'=>'note 11'
+];
+unset($aso['nomer']);
+var_dump($aso);
+
+echo "\n";
+//4. 
+//membuat array baru tanpa salah satu yang di deklarasikan
+$dif = [
+    'merk'=>'xiaomi',
+    'seri'=>'redmi',
+    'nomer'=>'note 11'
+]; 
+$cln_dif = array_diff($dif,["note 11"]);
+var_dump($cln_dif);
